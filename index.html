@@ -142,6 +142,33 @@ section{padding:120px 0}
   .info{padding:0 24px 36px}
 }
 
+/* boutique */
+.shop{background:#fdf9f2;border-block:0;overflow:hidden;color:#3a251a}
+.shop h2,.shop h3{color:#3a251a}
+.shop .btn{color:#3a251a;border-color:#3a251a;background:transparent}
+.shop .btn:hover{background:#3a251a;color:#fdf9f2}
+.shop .head{margin-bottom:18px}
+.shop .intro{color:#6b5445;margin-bottom:44px}
+.rail{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:8px}
+.rail::-webkit-scrollbar{display:none}
+.prod{flex:0 0 calc((100% - 48px)/3);text-align:center}
+.prod .img{position:relative;aspect-ratio:6/7;overflow:hidden;margin-bottom:22px}
+.prod .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.prod:hover .img img{transform:scale(1.04)}
+.prod .img.soon svg{position:absolute;inset:20%;width:60%;fill:none;stroke:#b79a5a;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.6}
+.prod h3{font-size:1.45rem;line-height:1.2;margin-bottom:6px;min-height:2.4em;display:flex;align-items:center;justify-content:center}
+.prod .price{color:#6b5445;font-size:1rem;margin-bottom:12px}
+.prod .link{font-size:.95rem;color:#3a251a;border-bottom:1px solid #3a251a}
+.rail-ui{display:flex;align-items:center;gap:28px;margin-top:40px}
+.track{position:relative;flex:1;height:2px;background:rgba(58,37,26,.25);cursor:pointer;padding-block:10px;background-clip:content-box;touch-action:none}
+.thumb{position:absolute;top:50%;height:3px;transform:translateY(-50%);background:#3a251a;border-radius:2px;left:0;width:25%;pointer-events:none}
+.arrows{display:flex;gap:10px}
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid #3a251a;background:transparent;color:#3a251a;display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s}
+.arrow:hover{background:#3a251a;color:#fdf9f2}
+.arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:980px){.prod{flex-basis:calc((100% - 24px)/2.3)}}
+@media (max-width:560px){.prod{flex-basis:72%}.rail-ui{gap:16px}}
+
 /* le lieu */
 .place .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
 .place h2{margin-bottom:24px}
@@ -246,6 +273,7 @@ footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="#soins">Nos soins</a></li>
+        <li><a href="#boutique">La boutique</a></li>
         <li><a href="#lieu">Le lieu</a></li>
         <li><a href="#venir">Nous trouver</a></li>
       </ul>
@@ -270,7 +298,6 @@ footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max
         <a class="btn solid" href="#reserver">Réserver un soin</a>
         <a class="link" href="#soins">Découvrir la carte</a>
       </div>
-      <p class="open-now"><span class="dot" id="dot"></span><span id="openText">Ouvert de 10h à 20h</span></p>
     </div>
   </div>
 </div>
@@ -338,15 +365,6 @@ footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max
           <a class="btn ask" href="#reserver" data-soin="Extensions de cils">Demander le tarif</a>
         </div>
       </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/boutique.jpg);--pos:50% 50%" aria-label="Skincare, parfums, beauté">
-        <div class="bg"></div>
-        <span class="vt">Skincare, parfums, beauté</span>
-        <div class="info">
-          <h3>Skincare, parfums, beauté</h3>
-          <p>Retrouvez vos produits préférés, à emporter après votre soin.</p>
-          <a class="btn ask" href="#reserver" data-soin="Produits de la boutique">Demander le tarif</a>
-        </div>
-      </article>
       <article class="panel" tabindex="0" style="--img:url(assets/p-epilation.jpg);--pos:40% 40%" aria-label="Coiffure et épilation">
         <div class="bg"></div>
         <span class="vt">Coiffure et épilation</span>
@@ -362,8 +380,27 @@ footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max
   </div>
 </section>
 
+<!-- BOUTIQUE -->
+<section id="boutique" class="shop">
+  <div class="wrap">
+    <div class="head">
+      <h2>La boutique</h2>
+      <a class="btn" href="#reserver" data-soin="Produits de la boutique">Demander un produit</a>
+    </div>
+    <p class="intro">Skincare, parfums, beauté : retrouvez vos produits préférés sur place, et prolongez votre soin à la maison.</p>
+    <div class="rail" id="rail" tabindex="0" aria-label="Produits de la boutique"></div>
+    <div class="rail-ui">
+      <div class="track" id="track" aria-hidden="true"><div class="thumb" id="thumb"></div></div>
+      <div class="arrows">
+        <button class="arrow" id="prev" aria-label="Produits précédents"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="arrow" id="next" aria-label="Produits suivants"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- LIEU -->
-<section id="lieu" class="place" style="padding-top:0">
+<section id="lieu" class="place">
   <div class="wrap">
     <div>
       <h2>Un lieu pensé pour ralentir</h2>
@@ -430,7 +467,7 @@ footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max
   <div class="wrap">
     <img src="assets/logo-full.png" alt="Lounge of Beauty Spa, l'art du bien-être" width="190" height="auto">
     <div class="links">
-      <a href="#soins">Nos soins</a><a href="#lieu">Le lieu</a><a href="#venir">Nous trouver</a><a href="https://www.instagram.com/loungeofbeauty__/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#soins">Nos soins</a><a href="#boutique">La boutique</a><a href="#lieu">Le lieu</a><a href="#venir">Nous trouver</a><a href="https://www.instagram.com/loungeofbeauty__/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <small>© 2026 Lounge of Beauty Spa, Brazzaville. Site de démonstration réalisé par l'Atelier KPM.</small>
   </div>
@@ -451,15 +488,11 @@ const burger=document.querySelector('.burger');
 burger.addEventListener('click',()=>{const o=header.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{header.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
 
-// horaires (heure de Brazzaville, UTC+1)
+// horaires : surligne le jour courant (heure de Brazzaville)
 (function(){
   const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Africa/Brazzaville'}));
-  const d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
-  const [o,c]=d===0?[14,19]:[10,20];
-  document.querySelector('.hours tr[data-d="'+d+'"]').classList.add('today');
-  const open=h>=o&&h<c;
-  document.getElementById('dot').classList.add(open?'live':'off');
-  document.getElementById('openText').textContent=open?'Ouvert maintenant, jusqu’à '+c+'h':'Fermé, ouvre '+(h<o?'aujourd’hui':'demain')+' à '+(h<o?o:(d===6?14:10))+'h';
+  const row=document.querySelector('.hours tr[data-d="'+now.getDay()+'"]');
+  if(row)row.classList.add('today');
 })();
 
 // panneaux soins
@@ -467,6 +500,61 @@ const panels=[...document.querySelectorAll('.panel')];
 const act=p=>panels.forEach(x=>x.classList.toggle('active',x===p));
 panels.forEach(p=>['mouseenter','focus','click'].forEach(ev=>p.addEventListener(ev,()=>act(p))));
 act(panels[0]);
+
+// Liste des produits : une entrée par produit (photo détourée dans assets/produits/)
+const PRODUITS=[
+  {nom:'Medix 5.5 Vitamin C + Niacinamide Body Wash',prix:'',img:'medix.jpg',pos:'center 62%'},
+  {nom:'Nuhanciam : lait corps, huile soin et gommage éclat',prix:'',img:'nuhanciam.jpg',pos:'center 45%'},
+  {nom:'Tree Hut Shea Sugar Scrub : Pineapple, Desert Haze, Exotic Bloom',prix:'',img:'treehut.jpg',pos:'center 50%'},
+  {nom:'Byoma : Liptide Lip Oil, Eye Gel et Lip Mask',prix:'',img:'byoma.jpg',pos:'center 55%'},
+  {nom:'Good Molecules, Advanced Clinicals et The Ordinary',prix:'',img:'serums.jpg',pos:'center 50%'},
+  {nom:'Advanced Clinicals Vitamin C Serum',prix:'',img:'advanced-clinicals.jpg',pos:'center 40%'},
+  {nom:'SkinCeuticals : nettoyants, masque et toner',prix:'',img:'skinceuticals.jpg',pos:'center 50%'},
+  {nom:'Aroma-Zone : sérums concentrés',prix:'',img:'aromazone.jpg',pos:'center 50%'},
+  {nom:'Good Molecules Daily Brightening Serum',prix:'',img:'good-molecules.jpg',pos:'center 40%'},
+  {nom:'The Ordinary Glycolic Acid 7% Toner',prix:'',img:'ordinary-glycolic.jpg',pos:'center 40%'}
+];
+(function(){
+  const lotus='<svg viewBox="0 0 200 150" aria-hidden="true"><path d="M100 140C78 110 78 60 100 12C122 60 122 110 100 140Z"/><path d="M100 140C74 128 58 96 60 52C88 70 104 104 100 140Z"/><path d="M100 140C126 128 142 96 140 52C112 70 96 104 100 140Z"/></svg>';
+  const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('rail').innerHTML=PRODUITS.map(p=>{
+    const msg=encodeURIComponent('Bonjour Lounge of Beauty Spa, je souhaite le prix de : '+p.nom+'.');
+    return '<article class="prod"><div class="img'+(p.img?'':' soon')+'">'+(p.img?'<img style="object-position:'+(p.pos||'center')+'" src="assets/produits/'+esc(p.img)+'" alt="'+esc(p.nom)+'" loading="lazy">':lotus)+'</div>'+
+      '<h3>'+esc(p.nom)+'</h3>'+(p.prix?'<div class="price">'+esc(p.prix)+'</div>':'')+
+      '<a class="link" target="_blank" rel="noopener" href="https://wa.me/242068760001?text='+msg+'">'+(p.prix?'Commander':'Demander le prix')+'</a></article>';
+  }).join('');
+})();
+
+// carrousel produits : défilement automatique + barre + flèches
+(function(){
+  const rail=document.getElementById('rail'),thumb=document.getElementById('thumb'),track=document.getElementById('track');
+  if(!rail)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const max=()=>rail.scrollWidth-rail.clientWidth;
+  function ui(){const r=rail.clientWidth/rail.scrollWidth,m=max();thumb.style.width=(r*100)+'%';thumb.style.left=(m>0?rail.scrollLeft/m*(100-r*100):0)+'%'}
+  rail.addEventListener('scroll',ui,{passive:true});addEventListener('resize',ui);ui();
+  let pos=0,paused=false,hold=0,resumeT;
+  const pause=ms=>{paused=true;clearTimeout(resumeT);if(ms)resumeT=setTimeout(()=>{pos=rail.scrollLeft;paused=false},ms)};
+  ['mouseenter','focusin','touchstart','pointerdown'].forEach(e=>rail.addEventListener(e,()=>pause()));
+  ['mouseleave','focusout'].forEach(e=>rail.addEventListener(e,()=>pause(1500)));
+  rail.addEventListener('touchend',()=>pause(3000));
+  rail.addEventListener('wheel',()=>pause(3000),{passive:true});
+  function tick(t){
+    if(!reduce&&!paused&&!document.hidden){
+      if(hold>t){}
+      else if(pos>=max()-1){hold=t+1400;setTimeout(()=>{rail.scrollTo({left:0,behavior:'smooth'});pos=0;hold=performance.now()+1800},1400)}
+      else{pos+=0.6;rail.scrollLeft=pos}
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  const step=()=>rail.querySelector('.prod').getBoundingClientRect().width+24;
+  document.getElementById('prev').addEventListener('click',()=>{pause(4000);rail.scrollBy({left:-step(),behavior:'smooth'})});
+  document.getElementById('next').addEventListener('click',()=>{pause(4000);rail.scrollBy({left:step(),behavior:'smooth'})});
+  const seek=e=>{const b=track.getBoundingClientRect();const r=Math.min(1,Math.max(0,(e.clientX-b.left)/b.width));rail.scrollLeft=r*max()};
+  track.addEventListener('pointerdown',e=>{pause(4000);track.setPointerCapture(e.pointerId);seek(e);track.onpointermove=seek});
+  track.addEventListener('pointerup',()=>{track.onpointermove=null});
+})();
 
 // réservation WhatsApp
 document.querySelectorAll('[data-soin]').forEach(b=>b.addEventListener('click',()=>{
