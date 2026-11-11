@@ -1,577 +1,395 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lounge of Beauty Spa | Institut de beauté et spa à Brazzaville</title>
-<meta name="description" content="Lounge of Beauty Spa, l'art du bien-être au cœur de Brazzaville : massages, soins du visage, manucure, pédicure, sauna, hammam, jacuzzi, coiffure et épilation.">
-<meta name="theme-color" content="#4a3022">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%234a3022'/%3E%3Cg fill='none' stroke='%23d4a832' stroke-width='5'%3E%3Cpath d='M100 140C78 110 78 60 100 12C122 60 122 110 100 140Z'/%3E%3Cpath d='M100 140C74 128 58 96 60 52C88 70 104 104 100 140Z'/%3E%3Cpath d='M100 140C126 128 142 96 140 52C112 70 96 104 100 140Z'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Jaipur — Restaurant indien &amp; Snack bar</title>
+<meta name="description" content="Jaipur, restaurant indien &amp; européen et snack bar : cuisine indienne, pizzas, burgers, wraps, plats sizzler, entrées végétariennes, cocktails et lassis. Avenue Denis Sassou N'Guesso, en face de Congo Télécom, Brazzaville.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#4a3022;
-  --coal:#55392b;
-  --panel:#5f4333;
-  --line:rgba(212,168,50,.28);
-  --gold:#d4a832;
-  --gold-hi:#ecd08a;
-  --ivory:#f1e9d6;
-  --muted:#cbc0a8;
-  --serif:'Cormorant Garamond','Cormorant',Georgia,serif;
-  --sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  --wrap:1180px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{background:var(--ink);color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-img,svg{display:block;max-width:100%}
+:root{--cream:#ffefdc;--ink:#2b1a10;--soft:#6f5a48;--orange:#d9731a;--tab:#cf5f1b;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--cream);line-height:1.6;background-color:#1d0e07;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,rgba(255,190,130,.03) 1px 2px,transparent 2px 7px),
+    repeating-linear-gradient(0deg,transparent 0 23px,rgba(0,0,0,.25) 23px 24px,transparent 24px 61px),
+    linear-gradient(180deg,#2c1509 0%,#1a0c06 100%);
+  background-attachment:fixed}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
-.wrap{width:min(var(--wrap),100% - 48px);margin-inline:auto}
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.01em}
-h2{font-size:clamp(2.4rem,5vw,4rem)}
-h3{font-size:1.7rem;font-weight:400}
-p{max-width:58ch}
+.hidden{display:none!important}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.flame{display:block;margin:0 auto 14px}
+.btn{display:inline-block;padding:15px 26px;border:.8px solid var(--cream);background:rgba(0,0,0,.4);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--cream);text-transform:uppercase;
+  letter-spacing:.16em;font-size:.92rem;font-weight:300;text-align:center;transition:background .2s,border-color .2s;cursor:pointer}
+.btn:hover,.btn:active{background:var(--tab);border-color:var(--tab)}
+.btn.solid{background:var(--tab);border-color:var(--tab);color:#fff}
+h2{font-weight:300;font-size:1.9rem;line-height:1.25;letter-spacing:.02em;text-align:center}
+.lead{text-align:center;color:#e8d3b8;max-width:560px;margin:14px auto 0;font-size:1.04rem}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.95em 1.9em;border:1px solid var(--gold);font:500 .95rem/1 var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .25s,color .25s,border-color .25s;border-radius:999px;background:transparent;color:var(--gold-hi)}
-.btn:hover{background:var(--gold);color:var(--ink)}
-.btn.solid{background:var(--gold);color:var(--ink)}
-.btn.solid:hover{background:var(--gold-hi);border-color:var(--gold-hi)}
-.link{color:var(--gold-hi);border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
-.link:hover{border-color:var(--gold-hi)}
-
-/* header */
-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-header.stuck{background:rgba(74,48,34,.88);backdrop-filter:blur(10px);border-color:var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--gold-hi)}
-.brand svg{width:38px;height:auto}
-nav ul{display:flex;gap:34px;list-style:none;font-size:.95rem}
-nav a{color:var(--ivory);opacity:.85;transition:opacity .2s,color .2s}
-nav a:hover{opacity:1;color:var(--gold-hi)}
-.bar .btn{padding:.75em 1.5em}
-.burger{display:none;background:none;border:0;color:var(--gold-hi);width:44px;height:44px;cursor:pointer}
-.burger span{display:block;width:24px;height:1px;background:currentColor;margin:7px auto;transition:transform .25s,opacity .25s}
-.open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
-.open .burger span:nth-child(2){opacity:0}
-.open .burger span:nth-child(3){transform:translateY(-12px) rotate(-45deg)}
+/* en-tête */
+.hdr{position:sticky;top:0;z-index:50;background:#000;border-bottom:3px solid var(--orange)}
+.hdr .in{max-width:900px;margin:0 auto;height:58px;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{height:40px;mix-blend-mode:lighten}
+.hdr nav{display:flex;gap:10px;align-items:center}
+.hdr .lnk{display:none;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;padding:8px 6px;color:#e8d3b8}
+.hdr .sw{padding:9px 14px;border:.8px solid var(--cream);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:400}
+@media(min-width:700px){.hdr .lnk{display:inline-block}}
 
 /* hero */
-.hero{min-height:100svh;display:grid;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;background:var(--ink)}
-.bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(74,48,34,.86) 0%,rgba(74,48,34,.55) 50%,rgba(74,48,34,.2) 100%),linear-gradient(180deg,rgba(74,48,34,.5) 0%,transparent 25%,transparent 75%,var(--ink) 100%)}
-.hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(3.2rem,7.4vw,6.4rem);margin-bottom:28px}
-.hero p.lead{font-size:1.15rem;color:var(--ivory);opacity:.85;margin-bottom:40px}
-.hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.hero .open-now{margin-top:44px;font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:10px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(212,168,50,.6)}
-.dot.live{animation:pulse 2.4s infinite}
-.dot.off{background:#6f6757;animation:none}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(212,168,50,0)}100%{box-shadow:0 0 0 0 rgba(212,168,50,0)}}
-.lotus{width:min(520px,100%);margin-inline:auto;filter:drop-shadow(0 0 28px rgba(212,168,50,.25))}
-.lotus path{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s cubic-bezier(.6,.1,.2,1) forwards;animation-delay:calc(var(--i)*.28s + .2s)}
-.lotus .fillglow{fill:rgba(212,168,50,.06);stroke:none;stroke-dasharray:none;stroke-dashoffset:0;opacity:0;animation:glow 2s 2.2s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes glow{to{opacity:1}}
-.hero .tag{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--muted);white-space:nowrap}
+.hero{position:relative;min-height:calc(100vh - 61px);min-height:calc(100dvh - 61px);display:flex;flex-direction:column;justify-content:space-between;
+  padding:34px 20px 34px;background:#000 url("hero.jpg") 40% 62%/cover no-repeat;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.18) 32%,rgba(0,0,0,.12) 55%,rgba(0,0,0,.9) 100%)}
+.hero>*{position:relative}
+.hero .logo{width:min(78%,340px);margin:0 auto 10px;display:block;mix-blend-mode:lighten}
+.hero .tag{letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;color:#e8c9a4;text-shadow:0 1px 8px #000}
+.hero .cta{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;width:100%}
+.hero .cta .btn{display:block}
+.hero .addr{margin-top:20px;font-size:.88rem;color:#dcc7ad}
 
-/* sections */
-section{padding:120px 0}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
-.head p{color:var(--muted)}
+/* services */
+.svc{display:grid;gap:14px;margin-top:34px}
+@media(min-width:620px){.svc{grid-template-columns:1fr 1fr}}
+.svc article{padding:28px 22px;border:.8px solid rgba(255,239,220,.55);background:rgba(0,0,0,.35);text-align:center;display:flex;flex-direction:column}
+.svc h3{font-weight:400;font-size:1.3rem;letter-spacing:.03em}
+.svc p{font-size:.95rem;color:#e2cdb2;margin:10px 0 18px;flex:1}
+.svc .btn{padding:13px 18px;font-size:.84rem}
 
-/* services bento */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(210px,auto);gap:16px}
-.tile{position:relative;padding:30px;border:1px solid var(--line);background:linear-gradient(160deg,var(--panel),#3d261a);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:border-color .3s,transform .3s;border-radius:4px}
-.tile::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,50,.14),transparent 70%);transition:transform .5s}
-.tile:hover{border-color:var(--gold)}
-.tile:hover::after{transform:scale(1.6)}
-.tile svg.ico{width:42px;height:42px;stroke:var(--gold);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:34px;position:relative;z-index:1}
-.tile h3,.tile p,.tile .price{position:relative;z-index:1}
-.tile p{color:var(--muted);font-size:.98rem;margin-top:8px}
-.tile .price{margin-top:22px;font-size:.92rem;color:var(--gold-hi)}
-.t-massage{grid-column:span 3;grid-row:span 2}
-.t-visage{grid-column:span 3}
-.t-eau{grid-column:span 3}
-.t-mani,.t-pedi,.t-coif,.t-epil{grid-column:span 3}
-.t-massage h3{font-size:2.6rem}
-.t-massage ul{list-style:none;margin-top:26px;position:relative;z-index:1}
-.t-massage li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:1rem}
-.t-massage li small{display:block;color:#c9bfa8;font-size:.85rem}
-.t-massage li b{font-weight:400;color:var(--gold-hi);white-space:nowrap}
-.note{margin-top:22px;font-size:.85rem;color:var(--muted)}
-
-.tile.ph{padding:0;justify-content:flex-start;background:linear-gradient(160deg,var(--panel),#3d261a)}
-.tile.ph::after{display:none}
-.tile.ph .pic{height:190px;background:var(--img) center/cover;border-bottom:1px solid var(--line);flex:none}
-.t-massage.ph .pic{height:300px}
-.tile.ph>div:not(.pic){padding:26px 30px 0}
-.tile.ph>.price{padding:0 30px 28px;margin-top:auto}
-.tile.ph>div:not(.pic){margin-bottom:22px}
-
-/* panneaux soins */
-#soins{padding-bottom:90px}
-.panels{display:flex;height:min(86vh,820px);min-height:620px;border-block:1px solid var(--line)}
-.panel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;border-left:1px solid rgba(255,255,255,.14);transition:flex-grow .8s cubic-bezier(.2,.7,.2,1);outline-offset:-3px}
-.panel:first-child{border-left:0}
-.panel.active{flex-grow:5.2}
-.panel .bg{position:absolute;inset:0;background:var(--img) var(--pos,50% 50%)/cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.panel.active .bg{transform:scale(1.03)}
-.panel.noimg .bg{background:linear-gradient(160deg,var(--panel),#3d261a)}
-.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(32,19,12,.92) 0%,rgba(32,19,12,.78) 28%,rgba(32,19,12,0) 62%);opacity:0;transition:opacity .6s;pointer-events:none}
-.panel.active::after{opacity:1}
-.vt{position:absolute;left:50%;bottom:34px;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font-family:var(--serif);font-size:1.55rem;color:#fff;white-space:nowrap;text-shadow:0 1px 12px rgba(0,0,0,.55);transition:opacity .3s}
-.panel.active .vt{opacity:0}
-.info{position:absolute;left:0;right:0;bottom:0;padding:0 40px 48px;text-align:center;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .5s .25s,transform .6s .25s,visibility 0s .8s}
-.panel.active .info{opacity:1;visibility:visible;transform:none;transition:opacity .5s .3s,transform .6s .3s,visibility 0s}
-.info h3{display:inline-block;font-size:clamp(2rem,3vw,2.8rem);color:#fff;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.8);margin-bottom:20px;text-shadow:0 1px 14px rgba(0,0,0,.4)}
-.info p{margin:0 auto;color:#fff;font-size:1.08rem;max-width:42ch;text-shadow:0 1px 10px rgba(0,0,0,.5)}
-.info .ask{margin-top:26px;background:rgba(32,19,12,.6);border-color:var(--gold-hi);color:#fff}
-.info .ask:hover{background:var(--gold);color:var(--ink)}
-@media (max-width:820px){
-  .panels{flex-direction:column;height:auto;min-height:0}
-  .panel{flex:none;height:84px;border-left:0;border-top:1px solid rgba(255,255,255,.14);transition:height .7s cubic-bezier(.2,.7,.2,1)}
-  .panel:first-child{border-top:0}
-  .panel.active{height:560px}
-  .vt{writing-mode:horizontal-tb;transform:translateY(-50%);left:24px;top:42px;bottom:auto}
-  .info{padding:0 24px 36px}
+/* ===== mise en page pleine largeur ===== */
+.wrap.wide{max-width:1240px}
+.eyebrow{display:block;text-transform:uppercase;letter-spacing:.24em;font-size:.74rem;color:var(--orange);margin-bottom:14px}
+section.split{padding:0}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:min(78vh,640px)}
+.split .pic{position:relative;overflow:hidden;cursor:zoom-in;background:#000;min-height:300px}
+.split .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.split .pic:hover img{transform:scale(1.04)}
+.split .txt{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(34px,6vw,100px);background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.42))}
+.split .txt>*{max-width:520px}
+.split .txt h2{text-align:left;font-size:clamp(1.9rem,3.2vw,2.8rem)}
+.split .txt p{color:#e8d3b8;font-size:1.06rem;margin-top:16px}
+.split .txt .actions{justify-content:flex-start;margin-top:28px}
+.split.rev .pic{order:2}
+.split .facts{list-style:none;margin-top:18px;color:#f0dcc2}
+.split .facts li{padding:5px 0;border-top:1px solid rgba(255,239,220,.14)}
+@media(max-width:860px){
+  .split{grid-template-columns:1fr;min-height:0}
+  .split .pic,.split.rev .pic{order:0;min-height:0;aspect-ratio:4/3}
+  .split .txt{padding:36px 22px 44px}
+}
+.duo{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,80px);align-items:start}
+.duo h2,.duo .lead{text-align:left;margin-left:0}
+.duo .tiles{grid-template-columns:1fr}
+.duo .picks{margin-top:0}
+@media(max-width:860px){.duo{grid-template-columns:1fr}.duo .picks{margin-top:26px}}
+@media(min-width:860px){
+  .card.wide{display:grid;grid-template-columns:1.35fr 1fr}
+  .card.wide .mapbox{grid-row:1/span 4;height:auto;min-height:460px}
+  .card.wide .info{border-top:1px solid rgba(43,26,16,.12);padding:28px 30px}
+  .card.wide .info:first-of-type{border-top:0}
+  .svc article{padding:44px 34px}
+  .svc h3{font-size:1.5rem}
 }
 
-/* boutique */
-.shop{background:#fdf9f2;border-block:0;overflow:hidden;color:#3a251a}
-.shop h2,.shop h3{color:#3a251a}
-.shop .btn{color:#3a251a;border-color:#3a251a;background:transparent}
-.shop .btn:hover{background:#3a251a;color:#fdf9f2}
-.shop .head{margin-bottom:18px}
-.shop .intro{color:#6b5445;margin-bottom:44px}
-.rail{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:8px}
-.rail::-webkit-scrollbar{display:none}
-.prod{flex:0 0 calc((100% - 48px)/3);text-align:center}
-.prod .img{position:relative;aspect-ratio:6/7;overflow:hidden;margin-bottom:22px}
-.prod .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.prod:hover .img img{transform:scale(1.04)}
-.prod .img.soon svg{position:absolute;inset:20%;width:60%;fill:none;stroke:#b79a5a;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.6}
-.prod h3{font-size:1.45rem;line-height:1.2;margin-bottom:6px;min-height:2.4em;display:flex;align-items:center;justify-content:center}
-.prod .price{color:#6b5445;font-size:1rem;margin-bottom:12px}
-.prod .link{font-size:.95rem;color:#3a251a;border-bottom:1px solid #3a251a}
-.rail-ui{display:flex;align-items:center;gap:28px;margin-top:40px}
-.shop .rail,.shop .rail-ui{margin-inline:calc(50% - 50vw);width:100vw;max-width:none}
-.shop .rail{padding-inline:0}
-.shop .rail-ui{padding-inline:clamp(16px,3vw,40px);box-sizing:border-box}
-.track{position:relative;flex:1;height:2px;background:rgba(58,37,26,.25);cursor:pointer;padding-block:10px;background-clip:content-box;touch-action:none}
-.thumb{position:absolute;top:50%;height:3px;transform:translateY(-50%);background:#3a251a;border-radius:2px;left:0;width:25%;pointer-events:none}
-.arrows{display:flex;gap:10px}
-.arrow{width:46px;height:46px;border-radius:50%;border:1px solid #3a251a;background:transparent;color:#3a251a;display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s}
-.arrow:hover{background:#3a251a;color:#fdf9f2}
-.arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:980px){.prod{flex-basis:calc((100% - 24px)/2.3)}}
-@media (max-width:560px){.prod{flex-basis:72%}.rail-ui{gap:16px}}
+section{padding:70px 0}
+.sep{height:1px;max-width:120px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--orange),transparent)}
 
-/* le lieu */
-.place .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
-.place h2{margin-bottom:24px}
-.place p{color:var(--muted);margin-bottom:30px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.shots img{width:100%;height:auto;border-radius:4px;border:1px solid var(--line)}
-.shots img:last-child{margin-top:56px}
-@media (max-width:820px){.shots img:last-child{margin-top:28px}}
+/* incontournables */
+.picks{margin-top:34px;background:var(--cream);color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.pick{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:16px 20px;border-top:1px solid rgba(43,26,16,.12)}
+.pick:first-child{border-top:0}
+.pick b{font-weight:500;display:block;font-size:1.02rem}
+.pick span{display:block;color:var(--soft);font-size:.86rem}
+.pick em{font-style:normal;font-weight:500;white-space:nowrap}
+.pick em small{font-weight:300;font-size:.68rem;color:var(--soft);letter-spacing:.06em;margin-left:3px}
 
-/* rituel */
-.ritual{background:var(--coal);border-block:1px solid var(--line)}
-.ritual .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
-.ritual h2{margin-bottom:24px}
-.ritual p{color:var(--muted);margin-bottom:34px}
-.steps{list-style:none;counter-reset:s;position:relative}
-.steps::before{content:"";position:absolute;left:19px;top:14px;bottom:14px;width:1px;background:var(--line)}
-.steps li{counter-increment:s;position:relative;padding:0 0 38px 64px}
-.steps li:last-child{padding-bottom:0}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--ink);border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:1.2rem;color:var(--gold-hi)}
-.steps h3{font-size:1.9rem;margin-bottom:4px}
-.steps span{color:var(--muted);font-size:.98rem}
+/* carte */
+.tiles{display:grid;gap:12px;margin-top:34px}
+@media(min-width:560px){.tiles{grid-template-columns:1fr 1fr}}
+.tile{display:block;padding:26px 22px;border:.8px solid rgba(255,239,220,.55);background:rgba(0,0,0,.35);transition:background .2s,border-color .2s}
+.tile:hover{background:rgba(207,95,27,.9);border-color:var(--tab)}
+.tile h3{font-weight:400;font-size:1.25rem;letter-spacing:.03em}
+.tile p{font-size:.88rem;color:#e2cdb2;margin-top:4px}
+.tile:hover p{color:#fff}
 
-/* formules */
-.plans{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:16px;align-items:stretch}
-.plan{border:1px solid var(--line);padding:38px 32px;display:flex;flex-direction:column;border-radius:4px;background:var(--panel)}
-.plan.main{background:linear-gradient(180deg,#725029,#573b20);border-color:var(--gold);padding-block:52px}
-.plan h3{font-size:2.1rem}
-.plan .dur{color:var(--muted);font-size:.92rem;margin:4px 0 24px}
-.plan ul{list-style:none;margin-bottom:30px;flex:1}
-.plan li{padding:9px 0 9px 26px;position:relative;font-size:.98rem}
-.plan li::before{content:"";position:absolute;left:0;top:19px;width:12px;height:1px;background:var(--gold)}
-.plan .amount{font-family:var(--serif);font-size:2.6rem;color:var(--gold-hi);line-height:1;margin-bottom:22px}
-.plan .amount small{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-left:6px}
-.gift{margin-top:16px;border:1px solid var(--line);border-radius:4px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:radial-gradient(70% 160% at 100% 50%,rgba(212,168,50,.13),transparent 70%)}
-.gift h3{font-size:2rem}
-.gift p{color:var(--muted);margin-top:4px}
+/* infos */
+.card{background:var(--cream);color:var(--ink);margin-top:34px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.card .info{padding:24px 22px}
+.card h3{font-weight:500;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#7a3a12;margin-bottom:6px}
+.card .info+.info{border-top:1px solid rgba(43,26,16,.12)}
+.card p,.card li{font-size:1rem;font-weight:400}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:14px;padding:4px 0}
+.mapbox{position:relative;height:340px;background:#e9e3da}
+.map{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapopen{position:absolute;right:10px;bottom:10px;z-index:2;background:#000;color:var(--cream);padding:9px 14px;font-size:.78rem;letter-spacing:.06em;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
 
-/* reservation + infos */
-.visit{background:var(--coal);border-top:1px solid var(--line)}
-.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.hours{width:100%;border-collapse:collapse;margin:28px 0 36px}
-.hours td{padding:13px 0;border-bottom:1px solid var(--line)}
-.hours td:last-child{text-align:right;color:var(--ivory)}
-.hours tr.today td{color:var(--gold-hi)}
-.hours tr.today td:first-child::after{content:" (aujourd'hui)";color:var(--muted);font-size:.85rem}
-.contact p{margin-bottom:6px;color:var(--ivory)}
-.contact p span{color:var(--muted)}
-.contact .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
-form{border:1px solid var(--line);padding:38px;border-radius:4px;background:var(--ink)}
-form h3{font-size:2.2rem;margin-bottom:6px}
-form>p{color:var(--muted);font-size:.95rem;margin-bottom:26px}
-label{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}
-input,select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--ivory);font:300 1.05rem var(--sans);padding:10px 0;margin-bottom:22px;border-radius:0;color-scheme:dark}
-select option{background:var(--ink)}
-input:focus,select:focus{outline:0;border-color:var(--gold-hi)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-form .btn{width:100%}
 
-footer{padding:64px 0 40px;border-top:1px solid var(--line);text-align:center}
-footer img{width:190px;margin:0 auto 26px}
-footer .links{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:26px;font-size:.95rem;color:var(--muted)}
-footer .links a:hover{color:var(--gold-hi)}
-footer small{color:#b3a68c;font-size:.82rem;display:block;margin-inline:auto;max-width:70ch}
+.meta{margin-top:10px;font-size:.84rem;color:#f0dcc2;text-shadow:0 1px 8px #000;letter-spacing:.04em}
+.meta .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#6fbf73;vertical-align:1px}
+.meta .dot.off{background:#c0563a}
+.stars{background:linear-gradient(90deg,var(--orange) var(--p),rgba(255,239,220,.25) var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.12em}
+.score{text-align:center;margin-top:30px}
+.score .big{font-size:4.4rem;font-weight:300;line-height:1}
+.score .big small{font-size:1.3rem;color:#cdb79c}
+.score .stars{display:inline-block;font-size:1.7rem;margin:6px 0 2px;letter-spacing:.1em;padding-right:0}
+.score .starsrow{display:block;line-height:1.2}
+.score p{color:#e2cdb2}
+.hours li.today{font-weight:500;color:#7a3a12}
+.hours li.closed span:last-child{color:#a1452b}
 
-.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 10px 30px rgba(74,48,34,.6);transition:transform .2s}
-.wa-float:hover{transform:scale(1.07)}
-.wa-float svg{width:28px;height:28px;fill:var(--ink)}
 
-@media (max-width:980px){
-  .ritual .wrap,.visit .wrap,.place .wrap{grid-template-columns:1fr;gap:56px}
-  .shade{background:linear-gradient(180deg,rgba(74,48,34,.6),rgba(74,48,34,.7) 60%,#000)}
-  .hero{padding-top:104px}
-  .plans{grid-template-columns:1fr}
-  .plan.main{padding-block:38px}
-  section{padding:88px 0}
-}
-@media (max-width:820px){
-  nav{position:fixed;inset:76px 0 auto 0;background:rgba(74,48,34,.97);border-bottom:1px solid var(--line);padding:12px 24px 28px;display:none}
-  .open nav{display:block}
-  nav ul{flex-direction:column;gap:0}
-  nav a{display:block;padding:16px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
-  .burger{display:block}
-  .bar>.btn{display:none}
-  .bento{grid-template-columns:1fr}
-  .tile,.t-massage{grid-column:auto;grid-row:auto}
-  .row{grid-template-columns:1fr;gap:0}
-  form{padding:28px 22px}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:18px;cursor:zoom-out}
+#lb img{max-width:100%;max-height:100%;object-fit:contain}
+
+footer{padding:46px 0 40px;text-align:center;border-top:1px solid rgba(255,239,220,.12)}
+footer .logo2{height:54px;mix-blend-mode:lighten;margin-bottom:12px}
+.social{display:flex;gap:18px;justify-content:center;margin:10px 0 14px;flex-wrap:wrap}
+.social a{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;border-bottom:1px solid var(--orange);padding-bottom:2px}
+.small{font-size:.84rem;color:#cdb79c}
+.credit{margin-top:18px;color:#8f7d6a;font-size:.72rem;letter-spacing:.05em}
+.credit a{color:#c9a46c}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Jaipur — Restaurant indien & Snack bar","servesCuisine":["Indienne","Européenne"],"telephone":"+242044821111",
+"address":{"@type":"PostalAddress","streetAddress":"Avenue Denis Sassou N'Guesso, en face de Congo Télécom","addressLocality":"Brazzaville","addressCountry":"CG"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"23:00"}]}
+</script>
 </head>
 <body>
 
-<header id="top">
-  <div class="wrap bar">
-    <a class="brand" href="#top" aria-label="Lounge of Beauty Spa, accueil">
-      <svg viewBox="0 0 200 150" aria-hidden="true" fill="none" stroke="#d4a832" stroke-width="6" stroke-linejoin="round"><path d="M100 140C78 110 78 60 100 12C122 60 122 110 100 140Z"/><path d="M100 140C74 128 58 96 60 52C88 70 104 104 100 140Z"/><path d="M100 140C126 128 142 96 140 52C112 70 96 104 100 140Z"/></svg>
-      Lounge of Beauty
-    </a>
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="#soins">Nos soins</a></li>
-        <li><a href="#boutique">La boutique</a></li>
-        <li><a href="#lieu">Le lieu</a></li>
-        <li><a href="#venir">Nous trouver</a></li>
-      </ul>
-    </nav>
-    <a class="btn" href="#reserver">Réserver</a>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
+<header class="hdr"><div class="in">
+  <a href="index.html" aria-label="Jaipur"><img class="hlogo" src="logo.png" alt="Jaipur"></a>
+  <nav>
+    <a class="lnk" href="#carte">La carte</a>
+    <a class="lnk" href="#infos">Infos</a>
+    <a class="sw" href="menu.html">Menu</a>
+  </nav>
+</div></header>
 
-<main>
-<!-- HERO -->
+<!-- ACCUEIL -->
 <div class="hero">
-  <video class="bgvid" autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg" aria-hidden="true">
-    <source src="assets/hero.mp4" type="video/mp4">
-  </video>
-  <div class="shade"></div>
-  <div class="wrap">
-    <div>
-      <h1>L'art du<br>bien-être,<br>à Brazzaville.</h1>
-      <p class="lead">Massages, soins du visage, sauna, hammam et jacuzzi. Un institut repensé de fond en comble pour que vous preniez enfin le temps de vous.</p>
-      <div class="cta">
-        <a class="btn solid" href="#reserver">Réserver un soin</a>
-        <a class="link" href="#soins">Découvrir la carte</a>
-      </div>
+  <div>
+    <img class="logo" src="logo.png" alt="Jaipur — Restaurant indien &amp; snack bar">
+    <p class="tag">Cuisine indienne &amp; européenne</p>
+    <p class="meta" id="heroMeta"></p>
+  </div>
+  <div>
+    <div class="cta">
+      <a class="btn solid" href="menu.html">Voir le menu</a>
+      <a class="btn" id="heroMap" href="#" target="_blank" rel="noopener">Itinéraire</a>
     </div>
+    <p class="addr">Avenue Denis Sassou N’Guesso<br>En face de Congo Télécom, Brazzaville</p>
   </div>
 </div>
 
-<!-- SOINS -->
-<section id="soins">
-  <div class="wrap">
-    <div class="head">
-      <h2>Nos soins</h2>
-      <p>Du visage aux pieds, tout se passe au même endroit.</p>
-    </div>
-  </div>
-  <div class="panels">
-      <article class="panel" tabindex="0" style="--img:url(assets/p-massage.jpg);--pos:20% 50%" aria-label="Massages">
-        <div class="bg"></div>
-        <span class="vt">Massages</span>
-        <div class="info">
-          <h3>Massages</h3>
-          <p>Le massage ne sert pas qu’à se détendre : il peut aussi aider à relâcher la tension musculaire. Votre corps mérite une pause.</p>
-          <a class="btn ask" href="#reserver" data-soin="Massage">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-visage.jpg);--pos:72% 50%" aria-label="Soins du visage">
-        <div class="bg"></div>
-        <span class="vt">Soins du visage</span>
-        <div class="info">
-          <h3>Soins du visage</h3>
-          <p>Masques et soins du visage pour prendre soin de votre peau, dans le calme.</p>
-          <a class="btn ask" href="#reserver" data-soin="Soin du visage">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-minceur.jpg);--pos:50% 25%" aria-label="Rituels minceur">
-        <div class="bg"></div>
-        <span class="vt">Rituels minceur</span>
-        <div class="info">
-          <h3>Rituels minceur</h3>
-          <p>Votre corps, votre rythme. Rituels minceur, remodelage et drainage lymphatique.</p>
-          <a class="btn ask" href="#reserver" data-soin="Rituel minceur">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-hammam.jpg);--pos:50% 30%" aria-label="Hammam, sauna et jacuzzi">
-        <div class="bg"></div>
-        <span class="vt">Hammam, sauna et jacuzzi</span>
-        <div class="info">
-          <h3>Hammam, sauna et jacuzzi</h3>
-          <p>Chaleur humide, vapeur et atmosphère enveloppante, puis détente au jacuzzi.</p>
-          <a class="btn ask" href="#reserver" data-soin="Hammam, sauna et jacuzzi">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-mains.jpg);--pos:40% 50%" aria-label="Manucure et pédicure">
-        <div class="bg"></div>
-        <span class="vt">Manucure et pédicure</span>
-        <div class="info">
-          <h3>Manucure et pédicure</h3>
-          <p>Soin des mains et des pieds, réalisé avec précision.</p>
-          <a class="btn ask" href="#reserver" data-soin="Manucure et pédicure">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-regard.jpg);--pos:50% 50%" aria-label="L'art du regard">
-        <div class="bg"></div>
-        <span class="vt">L'art du regard</span>
-        <div class="info">
-          <h3>L'art du regard</h3>
-          <p>Extensions de cils, et conseils pour bien les entretenir.</p>
-          <a class="btn ask" href="#reserver" data-soin="Extensions de cils">Demander le tarif</a>
-        </div>
-      </article>
-      <article class="panel" tabindex="0" style="--img:url(assets/p-epilation.jpg);--pos:40% 40%" aria-label="Coiffure et épilation">
-        <div class="bg"></div>
-        <span class="vt">Coiffure et épilation</span>
-        <div class="info">
-          <h3>Coiffure et épilation</h3>
-          <p>Coiffure et épilation, pour finir en beauté.</p>
-          <a class="btn ask" href="#reserver" data-soin="Coiffure et épilation">Demander le tarif</a>
-        </div>
-      </article>
-  </div>
-  <div class="wrap">
-    <p class="note">Les tarifs sont communiqués par l'institut sur demande.</p>
+<!-- RANGÉES IMAGE / TEXTE -->
+<section class="split" id="presentation">
+  <div class="pic"><img src="biryani.jpg" alt="Plat indien servi dans un kadai doré, avec raïta et sauce" loading="lazy"></div>
+  <div class="txt">
+    <span class="eyebrow">Nos plats</span>
+    <h2>Deux cuisines, une même table</h2>
+    <p>Chez Jaipur, on choisit sa cuisine : les saveurs indiennes (butter chicken, paneer, plats sizzler, entrées végétariennes) ou les classiques européens (pizzas, pâtes, burgers). À partager à toute heure, avec une vraie carte de cocktails, lassis et thés.</p>
+    <div class="actions"><a class="btn solid" href="menu.html">Voir le menu</a></div>
   </div>
 </section>
 
-<!-- BOUTIQUE -->
-<section id="boutique" class="shop">
-  <div class="wrap">
-    <div class="head">
-      <h2>La boutique</h2>
-      <a class="btn" href="#reserver" data-soin="Produits de la boutique">Demander un produit</a>
+<section class="split rev" id="histoire">
+  <div class="pic"><img src="cuisine.jpg" alt="Le chef dresse un plat avec ses accompagnements" loading="lazy" style="object-position:62% 50%"></div>
+  <div class="txt">
+    <span class="eyebrow">En cuisine</span>
+    <h2>Notre histoire</h2>
+    <p>Jaipur est né d'une envie simple : réunir à Brazzaville deux cuisines à la même table. D'un côté, la générosité de la cuisine indienne, aux épices dosées avec soin ; de l'autre, des classiques européens que chacun connaît et aime. Chaque recette est préparée minute pour que tout le monde y trouve son plaisir.</p>
+    <p>Qu'on vienne pour un snack entre amis, un déjeuner d'affaires ou une soirée autour d'un cocktail, la table reste la même : chaleureuse, conviviale et toujours ouverte jusqu'à tard.</p>
+  </div>
+</section>
+
+<section class="split" id="restaurant">
+  <div class="pic"><img src="facade.jpg" alt="Façade du restaurant Jaipur" loading="lazy" style="object-position:20% 50%"></div>
+  <div class="txt">
+    <span class="eyebrow">Le restaurant</span>
+    <h2>En plein cœur de Brazzaville</h2>
+    <p>Avenue Denis Sassou N’Guesso, en face de Congo Télécom : une adresse facile à trouver, pour un déjeuner, un snack entre amis ou une soirée.</p>
+    <ul class="facts"><li>Ouvert du mardi au dimanche, de 8h à 23h</li><li>Cuisine indienne &amp; européenne, cocktails, lassis et thés</li></ul>
+    <div class="actions"><a class="btn solid" id="dirBtn2" href="#" target="_blank" rel="noopener">Itinéraire</a></div>
+  </div>
+</section>
+
+<!-- LES INCONTOURNABLES -->
+<section id="carte">
+  <div class="wrap wide">
+    <div class="duo">
+      <div>
+        <span class="eyebrow">La carte</span>
+        <h2>Nos incontournables</h2>
+        <p class="lead">Quelques plats et boissons à ne pas manquer.</p>
+    <div class="tiles" style="margin-top:30px">
+      <a class="tile" href="menu.html#plats"><h3>Les plats</h3><p>Entrées, pizzas, pâtes, burgers, wraps, plats…</p></a>
+      <a class="tile" href="menu.html#boissons"><h3>Les boissons</h3><p>Cocktails, bières, whiskies, vins, champagnes…</p></a>
     </div>
-    <p class="intro">Skincare, parfums, beauté : retrouvez vos produits préférés sur place, et prolongez votre soin à la maison.</p>
-    <div class="rail" id="rail" tabindex="0" aria-label="Produits de la boutique"></div>
-    <div class="rail-ui">
-      <div class="track" id="track" aria-hidden="true"><div class="thumb" id="thumb"></div></div>
-      <div class="arrows">
-        <button class="arrow" id="prev" aria-label="Produits précédents"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="arrow" id="next" aria-label="Produits suivants"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    <div class="picks">
+      <div class="pick"><div><b>Sizzler</b><span>Crevette, poisson, agneau ou poulet, sauce sizzler, riz et légumes sautés</span></div><em>12 000<small>FCFA</small></em></div>
+      <div class="pick"><div><b>Pizza Butter Chicken</b><span>Poulet sauce indienne, poivron, oignon, fromage</span></div><em>9 000<small>FCFA</small></em></div>
+      <div class="pick"><div><b>Paneer Makhani sandwich</b><span>Paneer sauce indienne, laitue, fromage, tomate, frites</span></div><em>5 500<small>FCFA</small></em></div>
+      <div class="pick"><div><b>Paneer chilli</b><span>Fromage cottage sauté au gingembre et à l’ail, sauce soja</span></div><em>6 000<small>FCFA</small></em></div>
+      <div class="pick"><div><b>Thé Masala (Chai)</b><span>Le thé indien épicé</span></div><em>3 000<small>FCFA</small></em></div>
+      <div class="pick"><div><b>Mango lassi</b><span>Lassi à la mangue</span></div><em>3 500<small>FCFA</small></em></div>
+    </div>
+    </div>
+  </div>
+</section>
+<div class="sep"></div>
+
+<!-- ÉVÉNEMENTS & LIVRAISON -->
+<section id="services">
+  <div class="wrap wide">
+    <h2>Événements &amp; livraison</h2>
+    <p class="lead">Jaipur vous accompagne aussi en dehors de la salle.</p>
+    <div class="svc">
+      <article>
+        <h3>Événements &amp; privatisation</h3>
+        <p>Anniversaires, repas d’entreprise, retrouvailles entre amis : privatisez Jaipur ou réservez une grande table, et composez votre menu avec notre équipe.</p>
+        <a class="btn solid contactBtn" data-msg="Bonjour, je souhaite des informations pour un événement / une privatisation chez Jaipur." href="#" target="_blank" rel="noopener">Nous contacter</a>
+      </article>
+      <article>
+        <h3>Livraison</h3>
+        <p>Retrouvez nos plats indiens et européens, et nos snacks, chez vous ou au bureau. Contactez-nous pour passer commande et connaître les zones desservies.</p>
+        <a class="btn solid contactBtn" data-msg="Bonjour, je souhaite commander en livraison chez Jaipur." href="#" target="_blank" rel="noopener">Commander en livraison</a>
+      </article>
+    </div>
+  </div>
+</section>
+<div class="sep"></div>
+
+<!-- AVIS -->
+<section id="avis">
+  <div class="wrap wide">
+    <h2>Ils nous recommandent</h2>
+    <div class="score">
+      <div class="big"><span id="ratingNum">4,2</span><small>/5</small></div>
+      <div class="starsrow"><span class="stars" id="ratingStars" style="--p:84%">★★★★★</span></div>
+      <p id="ratingCount">Note Google</p>
+    </div>
+    <div class="actions">
+      <a class="btn" id="seeReviews" href="#" target="_blank" rel="noopener">Voir les avis sur Google</a>
+      <a class="btn solid hidden" id="reviewBtn2" href="#" target="_blank" rel="noopener">★ Laisser un avis</a>
+    </div>
+  </div>
+</section>
+<div class="sep"></div>
+
+<!-- INFOS PRATIQUES -->
+<section id="infos">
+  <div class="wrap wide">
+    <h2>Nous trouver</h2>
+    <div class="card wide">
+      <div class="mapbox"><iframe class="map" id="map" title="Carte Google Maps — Jaipur" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe><a class="mapopen" id="mapOpen" href="#" target="_blank" rel="noopener">Ouvrir dans Google Maps ↗</a></div>
+      <div class="info">
+        <h3>Adresse</h3>
+        <p>Jaipur — Restaurant indien &amp; Snack bar<br>Avenue Denis Sassou N’Guesso<br>En face de Congo Télécom, Brazzaville</p>
+      </div>
+      <div class="info">
+        <h3>Téléphone</h3>
+        <p>+242 04 482 11 11</p>
+      </div>
+      <div class="info hidden" id="hoursBox">
+        <h3>Horaires</h3>
+        <ul class="hours" id="hours"></ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- LIEU -->
-<section id="lieu" class="place">
-  <div class="wrap">
-    <div>
-      <h2>Un lieu pensé pour ralentir</h2>
-      <p>Lumières chaudes, bois, marbre et touches d'or : tout le cadre a été repensé pour que le soin commence dès l'entrée. Installez-vous, nous nous occupons du reste.</p>
-      <a class="btn" href="#venir">Nous trouver</a>
-    </div>
-    <div class="shots">
-      <img src="assets/espace.jpg" alt="Espace manucure et pédicure aux tons orange, bois et or" loading="lazy">
-      <img src="assets/boutique.jpg" alt="Comptoir d'accueil et étagères de produits de soin" loading="lazy">
+    <div class="actions">
+      <a class="btn solid" id="dirBtn" href="#" target="_blank" rel="noopener">Itinéraire</a>
+      <a class="btn" href="menu.html">Voir le menu</a>
+      <a class="btn hidden" id="reviewBtn" href="#" target="_blank" rel="noopener">★ Laisser un avis</a>
     </div>
   </div>
 </section>
-
-<!-- VENIR -->
-<section id="venir" class="visit">
-  <div class="wrap">
-    <div class="contact">
-      <h2>Nous trouver</h2>
-      <table class="hours" aria-label="Horaires d'ouverture">
-        <tr data-d="1"><td>Lundi</td><td>10h – 20h</td></tr>
-        <tr data-d="2"><td>Mardi</td><td>10h – 20h</td></tr>
-        <tr data-d="3"><td>Mercredi</td><td>10h – 20h</td></tr>
-        <tr data-d="4"><td>Jeudi</td><td>10h – 20h</td></tr>
-        <tr data-d="5"><td>Vendredi</td><td>10h – 20h</td></tr>
-        <tr data-d="6"><td>Samedi</td><td>10h – 20h</td></tr>
-        <tr data-d="0"><td>Dimanche</td><td>14h – 19h</td></tr>
-      </table>
-      <p>Avenue Amilcar Cabral, Immeuble City Center</p>
-      <p><span>Face à la station Afric, Brazzaville</span></p>
-      <p style="margin-top:14px"><a class="link" href="tel:+242068760001">+242 06 876 0001</a></p>
-      <div class="acts">
-        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lounge+of+Beauty+Spa+Brazzaville">Itinéraire</a>
-        <a class="btn" href="tel:+242068760001">Appeler</a>
-      </div>
-    </div>
-
-    <form id="reserver" onsubmit="return send(event)">
-      <h3>Réserver</h3>
-      <p>Choisissez votre soin, nous confirmons votre créneau sur WhatsApp.</p>
-      <label for="nom">Votre prénom</label>
-      <input id="nom" required autocomplete="given-name">
-      <label for="soin">Soin souhaité</label>
-      <select id="soin">
-        <option>Massage</option>
-        <option>Soin du visage</option>
-        <option>Rituel minceur</option>
-        <option>Hammam, sauna et jacuzzi</option>
-        <option>Manucure et pédicure</option>
-        <option>Extensions de cils</option>
-        <option>Produits de la boutique</option>
-        <option>Coiffure et épilation</option>
-      </select>
-      <div class="row">
-        <div><label for="jour">Jour</label><input id="jour" type="date"></div>
-        <div><label for="heure">Heure</label><input id="heure" type="time" min="10:00" max="20:00"></div>
-      </div>
-      <button class="btn solid" type="submit">Envoyer sur WhatsApp</button>
-    </form>
-  </div>
-</section>
-</main>
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo-full.png" alt="Lounge of Beauty Spa, l'art du bien-être" width="190" height="auto">
-    <div class="links">
-      <a href="#soins">Nos soins</a><a href="#boutique">La boutique</a><a href="#lieu">Le lieu</a><a href="#venir">Nous trouver</a><a href="https://www.instagram.com/loungeofbeauty__/" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <small>© 2026 Lounge of Beauty Spa, Brazzaville. Site de démonstration réalisé par l'Atelier KPM.</small>
+    <img class="logo2" src="logo.png" alt="Jaipur">
+    <p class="small">Restaurant indien &amp; Snack bar<br>Avenue Denis Sassou N’Guesso · En face de Congo Télécom, Brazzaville</p>
+    <div class="social hidden" id="social"></div>
+    <p class="credit">Site par <a href="#" class="creditLink">l’Atelier KPM</a></p>
   </div>
 </footer>
-
-<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/242068760001?text=Bonjour%20Lounge%20of%20Beauty%20Spa%2C%20je%20souhaite%20r%C3%A9server." aria-label="Écrire sur WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1a14 14 0 0 1-5.6-4.5c-.5-.7-1.5-2-1.5-3.3s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.2.1.8-.1 1.5Z"/></svg>
-</a>
+<div id="lb" class="hidden"><img alt=""></div>
 
 <script>
-// vidéo: image fixe si l'utilisateur limite les animations
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){const v=document.querySelector('.bgvid');v.removeAttribute('autoplay');v.pause()}
-// header
-const header=document.getElementById('top');
-const onScroll=()=>header.classList.toggle('stuck',scrollY>30);
-onScroll();addEventListener('scroll',onScroll,{passive:true});
-const burger=document.querySelector('.burger');
-burger.addEventListener('click',()=>{const o=header.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{header.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+/* ======== À PERSONNALISER ======== */
+const SITE = {
+  mapsQuery: "Jaipur Restaurant Brazzaville",   // trouve la fiche du restaurant avec son épingle (vérifié)
+  mapsLink:  "",   // lien long de la fiche Google Maps (google.com/maps/place/...) : prioritaire sur mapsQuery
+  reviewUrl: "",   // lien Google « Laisser un avis » (vide = bouton masqué)
+  rating: { score: "4,2", pct: 84 },
+  hours: [         // null = fermé
+    { d:"Lundi",    o:null },
+    { d:"Mardi",    o:["08:00","23:00"] },
+    { d:"Mercredi", o:["08:00","23:00"] },
+    { d:"Jeudi",    o:["08:00","23:00"] },
+    { d:"Vendredi", o:["08:00","23:00"] },
+    { d:"Samedi",   o:["08:00","23:00"] },
+    { d:"Dimanche", o:["08:00","23:00"] }
+  ],
+  contactWa: "242044821111",   // numéro WhatsApp (format international, sans + ni espaces) pour les boutons Événements / Livraison
+  social: { instagram:"https://www.instagram.com/jaipurrestaurantcongo/", facebook:"https://www.facebook.com/Jaipurrestaurantcongo/", whatsapp:"", tiktok:"https://www.tiktok.com/@jaipur.central.bar" },   // vide = masqué
+  kpmUrl: ""
+};
 
-// horaires : surligne le jour courant (heure de Brazzaville)
-(function(){
-  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Africa/Brazzaville'}));
-  const row=document.querySelector('.hours tr[data-d="'+now.getDay()+'"]');
-  if(row)row.classList.add('today');
-})();
+const $ = s => document.querySelector(s);
+const q = encodeURIComponent(SITE.mapsQuery);
+const dir = SITE.mapsLink || ("https://www.google.com/maps/search/?api=1&query=" + q);
+["#heroMap","#dirBtn","#dirBtn2","#seeReviews","#mapOpen"].forEach(s => $(s).href = dir);
+$("#map").src = "https://maps.google.com/maps?q=" + q + "&hl=fr&z=17&output=embed";
 
-// panneaux soins
-const panels=[...document.querySelectorAll('.panel')];
-const act=p=>panels.forEach(x=>x.classList.toggle('active',x===p));
-panels.forEach(p=>['mouseenter','focus','click'].forEach(ev=>p.addEventListener(ev,()=>act(p))));
-act(panels[0]);
+if (SITE.reviewUrl) ["#reviewBtn","#reviewBtn2"].forEach(s => { $(s).href = SITE.reviewUrl; $(s).classList.remove("hidden"); });
 
-// Liste des produits : une entrée par produit (photo détourée dans assets/produits/)
-const PRODUITS=[
-  {nom:'Medix 5.5 Vitamin C + Niacinamide Body Wash',prix:'',img:'medix.jpg',pos:'center 62%'},
-  {nom:'Nuhanciam : lait corps, huile soin et gommage éclat',prix:'',img:'nuhanciam.jpg',pos:'center 45%'},
-  {nom:'Tree Hut Shea Sugar Scrub : Pineapple, Desert Haze, Exotic Bloom',prix:'',img:'treehut.jpg',pos:'center 50%'},
-  {nom:'Byoma : Liptide Lip Oil, Eye Gel et Lip Mask',prix:'',img:'byoma.jpg',pos:'center 55%'},
-  {nom:'Good Molecules, Advanced Clinicals et The Ordinary',prix:'',img:'serums.jpg',pos:'center 50%'},
-  {nom:'Advanced Clinicals Vitamin C Serum',prix:'',img:'advanced-clinicals.jpg',pos:'center 40%'},
-  {nom:'SkinCeuticals : nettoyants, masque et toner',prix:'',img:'skinceuticals.jpg',pos:'center 50%'},
-  {nom:'Aroma-Zone : sérums concentrés',prix:'',img:'aromazone.jpg',pos:'center 50%'},
-  {nom:'Good Molecules Daily Brightening Serum',prix:'',img:'good-molecules.jpg',pos:'center 40%'},
-  {nom:'The Ordinary Glycolic Acid 7% Toner',prix:'',img:'ordinary-glycolic.jpg',pos:'center 40%'}
-];
-(function(){
-  const lotus='<svg viewBox="0 0 200 150" aria-hidden="true"><path d="M100 140C78 110 78 60 100 12C122 60 122 110 100 140Z"/><path d="M100 140C74 128 58 96 60 52C88 70 104 104 100 140Z"/><path d="M100 140C126 128 142 96 140 52C112 70 96 104 100 140Z"/></svg>';
-  const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('rail').innerHTML=PRODUITS.map(p=>{
-    const msg=encodeURIComponent('Bonjour Lounge of Beauty Spa, je souhaite le prix de : '+p.nom+'.');
-    return '<article class="prod"><div class="img'+(p.img?'':' soon')+'">'+(p.img?'<img style="object-position:'+(p.pos||'center')+'" src="assets/produits/'+esc(p.img)+'" alt="'+esc(p.nom)+'" loading="lazy">':lotus)+'</div>'+
-      '<h3>'+esc(p.nom)+'</h3>'+(p.prix?'<div class="price">'+esc(p.prix)+'</div>':'')+
-      '<a class="link" target="_blank" rel="noopener" href="https://wa.me/242068760001?text='+msg+'">'+(p.prix?'Commander':'Demander le prix')+'</a></article>';
-  }).join('');
-})();
+/* note */
+$("#ratingNum").textContent = SITE.rating.score;
+$("#ratingStars").style.setProperty("--p", SITE.rating.pct + "%");
 
-// carrousel produits : défilement automatique + barre + flèches
-(function(){
-  const rail=document.getElementById('rail'),thumb=document.getElementById('thumb'),track=document.getElementById('track');
-  if(!rail)return;
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const max=()=>rail.scrollWidth-rail.clientWidth;
-  function ui(){const r=rail.clientWidth/rail.scrollWidth,m=max();thumb.style.width=(r*100)+'%';thumb.style.left=(m>0?rail.scrollLeft/m*(100-r*100):0)+'%'}
-  rail.addEventListener('scroll',ui,{passive:true});addEventListener('resize',ui);ui();
-  let pos=0,paused=false,hold=0,resumeT;
-  const pause=ms=>{paused=true;clearTimeout(resumeT);if(ms)resumeT=setTimeout(()=>{pos=rail.scrollLeft;paused=false},ms)};
-  ['mouseenter','focusin','touchstart','pointerdown'].forEach(e=>rail.addEventListener(e,()=>pause()));
-  ['mouseleave','focusout'].forEach(e=>rail.addEventListener(e,()=>pause(1500)));
-  rail.addEventListener('touchend',()=>pause(3000));
-  rail.addEventListener('wheel',()=>pause(3000),{passive:true});
-  function tick(t){
-    if(!reduce&&!paused&&!document.hidden){
-      if(hold>t){}
-      else if(pos>=max()-1){hold=t+1400;setTimeout(()=>{rail.scrollTo({left:0,behavior:'smooth'});pos=0;hold=performance.now()+1800},1400)}
-      else{pos+=0.6;rail.scrollLeft=pos}
-    }
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-  const step=()=>rail.querySelector('.prod').getBoundingClientRect().width+24;
-  document.getElementById('prev').addEventListener('click',()=>{pause(4000);rail.scrollBy({left:-step(),behavior:'smooth'})});
-  document.getElementById('next').addEventListener('click',()=>{pause(4000);rail.scrollBy({left:step(),behavior:'smooth'})});
-  const seek=e=>{const b=track.getBoundingClientRect();const r=Math.min(1,Math.max(0,(e.clientX-b.left)/b.width));rail.scrollLeft=r*max()};
-  track.addEventListener('pointerdown',e=>{pause(4000);track.setPointerCapture(e.pointerId);seek(e);track.onpointermove=seek});
-  track.addEventListener('pointerup',()=>{track.onpointermove=null});
-})();
-
-// réservation WhatsApp
-document.querySelectorAll('[data-soin]').forEach(b=>b.addEventListener('click',()=>{
-  const s=document.getElementById('soin');[...s.options].forEach(o=>{if(o.text===b.dataset.soin)s.value=o.text});
-}));
-function send(e){
-  e.preventDefault();
-  const n=nom.value.trim(),s=soin.value,j=jour.value,h=heure.value;
-  let t='Bonjour Lounge of Beauty Spa, je suis '+n+'. Je souhaite réserver : '+s+'.';
-  if(j)t+=' Jour souhaité : '+new Date(j).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})+'.';
-  if(h)t+=' Heure : '+h.replace(':','h')+'.';
-  window.open('https://wa.me/242068760001?text='+encodeURIComponent(t),'_blank','noopener');
-  return false;
+/* heure à Brazzaville */
+const DAYS = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+function nowBzv(){
+  const f = new Intl.DateTimeFormat("fr-FR",{timeZone:"Africa/Brazzaville",weekday:"long",hour:"2-digit",minute:"2-digit",hour12:false});
+  const o = Object.fromEntries(f.formatToParts(new Date()).map(p => [p.type,p.value]));
+  return { day: o.weekday.toLowerCase(), min: (+o.hour % 24) * 60 + (+o.minute) };
 }
+const toMin = t => { const [h,m] = t.split(":"); return +h*60 + +m; };
+const label = d => d.o ? d.o[0].replace(":","h") + " – " + d.o[1].replace(":","h") : "Fermé";
+const now = nowBzv();
+const today = SITE.hours.find(d => d.d.toLowerCase() === now.day);
+const isOpen = today && today.o && now.min >= toMin(today.o[0]) && now.min < toMin(today.o[1]);
+
+$("#hours").innerHTML = SITE.hours.map(d =>
+  `<li class="${d.d.toLowerCase()===now.day?"today":""} ${d.o?"":"closed"}"><span>${d.d}</span><span>${label(d)}</span></li>`).join("");
+$("#hoursBox").classList.remove("hidden");
+
+let status = isOpen ? `<span class="dot"></span>Ouvert · jusqu’à ${today.o[1].replace(":","h")}` : `<span class="dot off"></span>Fermé actuellement`;
+$("#heroMeta").innerHTML = `★ ${SITE.rating.score} sur Google &nbsp;·&nbsp; ${status}`;
+
+/* galerie : agrandir au toucher */
+document.querySelectorAll(".split .pic").forEach(f => f.addEventListener("click", () => {
+  $("#lb img").src = f.querySelector("img").src; $("#lb").classList.remove("hidden");
+}));
+$("#lb").addEventListener("click", () => $("#lb").classList.add("hidden"));
+
+/* réseaux */
+document.querySelectorAll(".contactBtn").forEach(a=>{
+  a.href = "https://wa.me/" + SITE.contactWa + "?text=" + encodeURIComponent(a.dataset.msg);
+});
+const labels = {instagram:"Instagram", facebook:"Facebook", whatsapp:"WhatsApp", tiktok:"TikTok"};
+const links = Object.entries(SITE.social).filter(([,v]) => v);
+if (links.length){
+  $("#social").innerHTML = links.map(([k,v]) => `<a href="${v}" target="_blank" rel="noopener">${labels[k]}</a>`).join("");
+  $("#social").classList.remove("hidden");
+}
+document.querySelectorAll(".creditLink").forEach(a => { if (SITE.kpmUrl) a.href = SITE.kpmUrl; else a.addEventListener("click", e => e.preventDefault()); });
 </script>
 </body>
 </html>
