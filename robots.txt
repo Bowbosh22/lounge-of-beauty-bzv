@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bowbosh22.github.io/lounge-of-beauty-bzv/sitemap.xml
